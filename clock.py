@@ -14,9 +14,9 @@ def main():
     index = 0
 
     while True:
-        now = datetime.now().hour
+        now_morning = datetime.now().hour
         # try:
-        if 7 <= now <= 23:
+        if 7 <= now_morning <= 23:
             shift_time = random.randint(1, 300)
             print(f"次のツイートまで {tweet_time - shift_time}秒")
             time.sleep(tweet_time - shift_time)
