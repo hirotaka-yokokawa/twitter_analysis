@@ -6,6 +6,7 @@ from datetime import datetime
 import twitterscraper
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 
 day_tweets = []
 
@@ -66,17 +67,30 @@ def tweet_select():
 
 
 def tweet(index):
-    driver = webdriver.Firefox(executable_path="./geckodriver")
+    user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
+    dcap = {
+        "phantomjs.page.settings.userAgent": user_agent,
+        'marionette': True
+    }
+
+    options = Options()
+    options.set_headless(Options.headless)
+    driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path="./phantomjs")
     driver.get("https://twitter.com/")
     driver.find_element_by_name("session[username_or_email]").send_keys("hibikikkk_9712")
     time.sleep(2)
     driver.find_element_by_name("session[password]").send_keys("Kudo9712")
     driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
+    driver.get("https://mobile.twitter.com/compose/tweet")
+    print(driver.current_url)
+    # a = requests.get(driver.current_url)
+    # soup = BeautifulSoup(a.text,"html.parser")
+    # print(soup.find_all("div"))
 
     time.sleep(3)
-    driver.find_element_by_name("tweet").send_keys(day_tweets[index])
+    driver.find_element_by_name("""tweet[text]""").send_keys(day_tweets[index])
     time.sleep(10)
-    driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
+    driver.find_element_by_name('commit').click()
     time.sleep(1)
 
     driver.close()
@@ -84,11 +98,12 @@ def tweet(index):
 
 if __name__ == "__main__":
     # init_db()
+    tweet_select()
     print(
         f"python min_retweets:50 until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
     search(f"python until:{datetime.today().year}-{datetime.today().month}-{datetime.today().day} lang:ja")
     # tweet_select()
-    # tweet()
+    tweet(0)
 
     #
     # while  :
