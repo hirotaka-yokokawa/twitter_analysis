@@ -13,6 +13,8 @@ flask = "*"
 twitterscraper = "*"
 line-bot-sdk = "*"
 pandas = "*"
+apscheduler = "*"
+schedule = "*"
 
 [dev-packages]
 
