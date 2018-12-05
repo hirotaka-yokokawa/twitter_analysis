@@ -25,6 +25,7 @@ def main():
 
         else:
             bot.day_tweets.clear()
+            print("今日も終了です")
             bot.search(
                 f"python until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
             break
