@@ -279,3 +279,85 @@ console.error: BroadcastService:
 [Child 19391, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
 [Child 19391, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
 [Child 19391, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
+1543982805144	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.g4Jtt0eLYh3x"
+1543982807292	Marionette	INFO	Listening on port 60551
+1543982807319	Marionette	WARN	TLS certificate errors will be ignored for this session
+1543982827084	Marionette	INFO	Stopped listening on port 60551
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1543982828639	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.c0BJuYOUTHku"
+1543982830503	Marionette	INFO	Listening on port 60705
+1543982830594	Marionette	WARN	TLS certificate errors will be ignored for this session
+1543982849045	Marionette	INFO	Stopped listening on port 60705
+1543982850513	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.IPpTGj6aCDcU"
+1543982852315	Marionette	INFO	Listening on port 60847
+1543982852369	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1543982899399	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.iBJrs1eMbPiQ"
+1543982901231	Marionette	INFO	Listening on port 61096
+1543982901261	Marionette	WARN	TLS certificate errors will be ignored for this session
+1543982920709	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.uwxXuJYJjw5f"
+1543982922445	Marionette	INFO	Listening on port 61228
+1543982922451	Marionette	WARN	TLS certificate errors will be ignored for this session
+1543982941195	Marionette	INFO	Stopped listening on port 61228
+1543982942774	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.P6zOnKvLAOXE"
+1543982944539	Marionette	INFO	Listening on port 61370
+1543982944629	Marionette	WARN	TLS certificate errors will be ignored for this session
+1543982963646	Marionette	INFO	Stopped listening on port 61370
+1543982965210	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.mtTPhc8rtFEQ"
+1543982967084	Marionette	INFO	Listening on port 61509
+1543982967153	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+1543983126104	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.4gqJszJPDiJB"
+1543983128100	Marionette	INFO	Listening on port 62225
+1543983128167	Marionette	WARN	TLS certificate errors will be ignored for this session
+1543983147298	Marionette	INFO	Stopped listening on port 62225
+1543983148888	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.rn3TZlbd74mf"
+1543983150699	Marionette	INFO	Listening on port 62371
+1543983150742	Marionette	WARN	TLS certificate errors will be ignored for this session
+1543983169264	Marionette	INFO	Stopped listening on port 62371
+1543983170836	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.CGLpvtA4iaXT"
+1543983172645	Marionette	INFO	Listening on port 62514
+1543983172681	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+1543989295565	Marionette	INFO	Stopped listening on port 52184
+1543989297012	Marionette	INFO	Stopped listening on port 61096
+1543989298588	Marionette	INFO	Stopped listening on port 61509
+1543989300125	Marionette	INFO	Stopped listening on port 62514

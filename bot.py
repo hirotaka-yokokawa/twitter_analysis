@@ -34,7 +34,7 @@ def search(query):
     for result in twitterscraper.query.query_tweets_once_generator(query=query, limit=1, lang="ja"):
         if result[0].timestamp.day == now_day - 1:
             cursor.execute(sql, (result[0].user, result[0].text, int(result[0].likes), int(result[0].retweets),
-                             "https://twitter.com" + str(result[0].url)))
+                                 "https://twitter.com" + str(result[0].url)))
         counter += 1
 
     conn.commit()
@@ -82,38 +82,11 @@ def tweet(index):
     driver.close()
 
 
-def exe():
-    tweet_select()
-    tweet_time = 57600 / len(day_tweets)
-    index = 0
-
-    while True:
-        now = datetime.now()
-        try:
-            if 7 <= now.hour <= 23:
-                shift_time = random.randint(1, 300)
-                print(f"次のツイートまで {tweet_time - shift_time}秒")
-                time.sleep(tweet_time - shift_time)
-                tweet(index)
-                time.sleep(7)
-                index += 1
-
-
-            else:
-                day_tweets.clear()
-                search(
-                f"python until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
-                break
-        except:
-            break
-
-
-
 if __name__ == "__main__":
     # init_db()
     print(
         f"python min_retweets:50 until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
-    search(f"python lang:ja")
+    search(f"python until:{datetime.today().year}-{datetime.today().month}-{datetime.today().day} lang:ja")
     # tweet_select()
     # tweet()
 
