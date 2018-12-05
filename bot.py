@@ -97,13 +97,13 @@ def tweet(index):
 
 
 if __name__ == "__main__":
-    # init_db()
-    tweet_select()
-    print(
-        f"python min_retweets:50 until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
-    search(f"python until:{datetime.today().year}-{datetime.today().month}-{datetime.today().day} lang:ja")
+    init_db()
     # tweet_select()
-    tweet(0)
+    # print(
+    #     f"python min_retweets:50 until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
+    # search(f"python until:{datetime.today().year}-{datetime.today().month}-{datetime.today().day} lang:ja")
+    # tweet_select()
+    # tweet(0)
 
     #
     # while  :
