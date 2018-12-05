@@ -361,3 +361,10 @@ console.error: BroadcastService:
 1543989297012	Marionette	INFO	Stopped listening on port 61096
 1543989298588	Marionette	INFO	Stopped listening on port 61509
 1543989300125	Marionette	INFO	Stopped listening on port 62514
+1543992363449	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.KWKg9iegKJeT"
+1543992365976	Marionette	INFO	Listening on port 50688
+1543992366037	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 28707, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 28705, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
