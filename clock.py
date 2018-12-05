@@ -52,4 +52,5 @@ if __name__ == "__main__":
         threading_main.start()
         timer()
         threading_main.join()
+        print("今日は終了中です")
         time.sleep(28800)

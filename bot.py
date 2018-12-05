@@ -91,7 +91,7 @@ def tweet(index):
     driver.find_element_by_name("""tweet[text]""").send_keys(day_tweets[index])
     time.sleep(10)
     driver.find_element_by_name('commit').click()
-    time.sleep(1)
+    time.sleep(3)
 
     driver.close()
 
