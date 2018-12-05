@@ -3,7 +3,6 @@ import time
 # from apscheduler.schedulers.blocking import BlockingScheduler
 import schedule
 
-# from datetime import datetime
 import bot
 
 
