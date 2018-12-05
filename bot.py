@@ -1,6 +1,7 @@
 import random
 import sqlite3
 import time
+from datetime import datetime
 
 import twitterscraper
 from selenium import webdriver
@@ -23,6 +24,7 @@ def init_db():
 
 
 def search(query):
+    now_day = datetime.today().day
     counter = 1
     conn = sqlite3.connect("tweets.sqlite")
     cursor = conn.cursor()
@@ -30,7 +32,8 @@ def search(query):
     sql = "INSERT INTO tweets (user,text,likes,retweets,url) VALUES (?,?,?,?,?)"
 
     for result in twitterscraper.query.query_tweets_once_generator(query=query, limit=1, lang="ja"):
-        cursor.execute(sql, (result[0].user, result[0].text, int(result[0].likes), int(result[0].retweets),
+        if result[0].timestamp.day == now_day - 1:
+            cursor.execute(sql, (result[0].user, result[0].text, int(result[0].likes), int(result[0].retweets),
                              "https://twitter.com" + str(result[0].url)))
         counter += 1
 
@@ -55,12 +58,14 @@ def tweet_select():
     for a in result:
         results.append(a[2])
 
+    print(len(results))
+    print(tweet_num)
     day_tweets = random.sample(results, tweet_num)
 
     # for num in range(tweet_num):
 
 
-def tweet():
+def tweet(index):
     driver = webdriver.Firefox(executable_path="/Users/kudouhibiki/PycharmProjectst/twitter_analysis/geckodriver")
     driver.get("https://twitter.com/")
     driver.find_element_by_name("session[username_or_email]").send_keys("hibikikkk_9712")
@@ -69,8 +74,8 @@ def tweet():
     driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
 
     time.sleep(3)
-    driver.find_element_by_name("tweet").send_keys(day_tweets[1])
-    time.sleep(3)
+    driver.find_element_by_name("tweet").send_keys(day_tweets[index])
+    time.sleep(10)
     driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
     time.sleep(1)
 
@@ -78,10 +83,12 @@ def tweet():
 
 
 if __name__ == "__main__":
-    search("python min_faves:100")
-    tweet_select()
-    tweet()
     # init_db()
+    print(
+        f"python min_retweets:50 until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
+    search(f"python lang:ja")
+    # tweet_select()
+    # tweet()
 
     #
     # while  :
