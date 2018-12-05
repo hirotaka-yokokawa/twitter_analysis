@@ -340,6 +340,7 @@
             "index": "pypi",
             "version": "==2.20.1"
         },
+<<<<<<< HEAD
         "schedule": {
             "hashes": [
                 "sha256:1003a07c2dce12828c25a03a611a7371cedfa956e5f1b4abc32bcc94eb5a335b",
@@ -348,6 +349,8 @@
             "index": "pypi",
             "version": "==0.5.0"
         },
+=======
+>>>>>>> b61af5f19471b97d8a19e7e419ce7058663ef1fd
         "scipy": {
             "hashes": [
                 "sha256:0611ee97296265af4a21164a5323f8c1b4e8e15c582d3dfa7610825900136bb7",
