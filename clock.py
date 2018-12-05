@@ -15,24 +15,24 @@ def main():
 
     while True:
         now = datetime.now().hour
-        try:
-            if 7 <= now <= 23:
-                shift_time = random.randint(1, 300)
-                print(f"次のツイートまで {tweet_time - shift_time}秒")
-                time.sleep(tweet_time - shift_time)
-                bot.tweet(index)
-                index += 1
+        # try:
+        if 7 <= now <= 23:
+            shift_time = random.randint(1, 300)
+            print(f"次のツイートまで {tweet_time - shift_time}秒")
+            time.sleep(tweet_time - shift_time)
+            bot.tweet(index)
+            index += 1
 
-            else:
-                bot.day_tweets.clear()
-                bot.search(
-                    f"python until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
-                break
-        except:
+        else:
             bot.day_tweets.clear()
             bot.search(
                 f"python until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
             break
+    # except:
+    #     bot.day_tweets.clear()
+    #     bot.search(
+    #         f"python until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
+    #     break
 
 
 def timer():
