@@ -33,8 +33,8 @@ def search(query):
     sql = "INSERT INTO tweets (user,text,likes,retweets,url) VALUES (?,?,?,?,?)"
 
     for result in twitterscraper.query.query_tweets_once_generator(query=query, limit=1, lang="ja"):
-        if result[0].timestamp.day == now_day - 1:
-            cursor.execute(sql, (result[0].user, result[0].text, int(result[0].likes), int(result[0].retweets),
+        # if result[0].timestamp.day == now_day - 1:
+        cursor.execute(sql, (result[0].user, result[0].text, int(result[0].likes), int(result[0].retweets),
                                  "https://twitter.com" + str(result[0].url)))
         counter += 1
 
@@ -97,11 +97,11 @@ def tweet(index):
 
 
 if __name__ == "__main__":
-    init_db()
+    # init_db()
     # tweet_select()
     # print(
     #     f"python min_retweets:50 until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
-    # search(f"python until:{datetime.today().year}-{datetime.today().month}-{datetime.today().day} lang:ja")
+    search(f"python until:{datetime.today().year-2}-{datetime.today().month}-{datetime.today().day-1} lang:ja")
     # tweet_select()
     # tweet(0)
 
