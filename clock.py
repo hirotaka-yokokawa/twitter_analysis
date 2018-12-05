@@ -16,6 +16,7 @@ def main():
 
     while True:
         now_morning = datetime.now().hour
+        print(f"{now_morning}時です")
         # try:
         if 7 <= now_morning <= 23:
             shift_time = random.randint(1, 300)
@@ -41,7 +42,7 @@ def timer():
     now = datetime.now()
     now = now.hour * 3600 + now.minute * 60 + now.second
     print(now)
-    while now <= 82800:
+    while now <= 82800 and now >= 25200:
         time.sleep(1)
         now += 1
 
