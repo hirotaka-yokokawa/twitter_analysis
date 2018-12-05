@@ -66,7 +66,7 @@ def tweet_select():
 
 
 def tweet(index):
-    driver = webdriver.Firefox(executable_path="/Users/kudouhibiki/PycharmProjectst/twitter_analysis/geckodriver")
+    driver = webdriver.Firefox(executable_path="./geckodriver")
     driver.get("https://twitter.com/")
     driver.find_element_by_name("session[username_or_email]").send_keys("hibikikkk_9712")
     time.sleep(2)

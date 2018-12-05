@@ -9,6 +9,9 @@ import bot
 
 
 def main():
+
+
+    """実行用関数"""
     bot.tweet_select()
     tweet_time = 57600 / len(bot.day_tweets)
     index = 0
