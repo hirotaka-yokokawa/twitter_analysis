@@ -454,3 +454,6 @@ console.error: BroadcastService:
 1544021561354	Marionette	INFO	Stopped listening on port 64191
 1544021671349	Marionette	INFO	Stopped listening on port 63471
 1544021672962	Marionette	INFO	Stopped listening on port 55636
+1544023429158	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/jz/24yflq0x2yj2tmh35qjwzfb80000gn/T/rust_mozprofile.sMTjgC71gW9G"
+1544023432036	Marionette	INFO	Listening on port 55702
+1544023432131	Marionette	WARN	TLS certificate errors will be ignored for this session

@@ -33,8 +33,8 @@ def search(query):
     sql = "INSERT INTO tweets (user,text,likes,retweets,url) VALUES (?,?,?,?,?)"
 
     for result in twitterscraper.query.query_tweets_once_generator(query=query, limit=1, lang="ja"):
-        # if result[0].timestamp.day == now_day - 1:
-        cursor.execute(sql, (result[0].user, result[0].text, int(result[0].likes), int(result[0].retweets),
+        if result[0].timestamp.day == now_day - 1:
+            cursor.execute(sql, (result[0].user, result[0].text, int(result[0].likes), int(result[0].retweets),
                                  "https://twitter.com" + str(result[0].url)))
         counter += 1
 
@@ -75,7 +75,7 @@ def tweet(index):
 
     options = Options()
     options.set_headless(Options.headless)
-    driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path="./phantomjs")
+    driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path="./phantomjs-2.1.1-macosx/phantomjs")
     driver.get("https://twitter.com/")
     driver.find_element_by_name("session[username_or_email]").send_keys("hibikikkk_9712")
     time.sleep(2)
