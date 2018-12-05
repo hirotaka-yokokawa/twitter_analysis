@@ -10,7 +10,7 @@ def main():
     schedule.every().day.at("7:00").do(job_func=bot.exe())
     while True:
         schedule.run_pending()
-        time.sleep(86400)
+        time.sleep(1)
 
 
 if __name__ == "__main__":
