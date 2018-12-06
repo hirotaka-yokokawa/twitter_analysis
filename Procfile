@@ -1,2 +1,2 @@
-web: python server.py
-clock: python clock.py
+web: python3 server.py
+clock: python3 clock.py
