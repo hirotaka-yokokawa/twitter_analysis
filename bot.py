@@ -78,6 +78,7 @@ def tweet(index):
     driver = webdriver.PhantomJS(desired_capabilities=dcap)
     driver.set_window_size(1124, 850)
     driver.get("https://twitter.com/")
+    time.sleep(5)
     driver.find_element_by_name("session[username_or_email]").send_keys("hibikikkk_9712")
     time.sleep(2)
     driver.find_element_by_name("session[password]").send_keys("Kudo9712")
