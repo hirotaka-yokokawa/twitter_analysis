@@ -84,7 +84,7 @@ def tweet(index):
     driver.execute_script("window.scrollTo(0, document.head.scrollHeight);")
     time.sleep(5)
     driver.save_screenshot("screenshot_login.png")
-    driver.find_element_by_name("session[username_or_email]").send_keys("hibikikkk_9712")
+    driver.find_element_by_name("session[username_or_email]").send_keys("BuzzGene")
     time.sleep(2)
     driver.find_element_by_name("session[password]").send_keys("Kudo9712")
     driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
