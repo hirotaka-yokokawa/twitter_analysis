@@ -72,35 +72,39 @@ def tweet(index):
         "phantomjs.page.settings.userAgent": user_agent,
         'marionette': True
     }
+    if index == 0:
+        options = Options()
+        options.binary_location = '/app/.apt/usr/bin/google-chrome'
+        options.add_argument('--headless')
+        options.add_argument('--disable-gpu')
+        driver = webdriver.Chrome(chrome_options=options, executable_path="chromedriver")
+        # driver = webdriver.PhantomJS(desired_capabilities=dcap)
+        driver.get("https://twitter.com/")
+        driver.set_window_size(1124, 1124)
+        driver.execute_script("window.scrollTo(0, document.head.scrollHeight);")
+        time.sleep(5)
+        driver.save_screenshot("screenshot_login.png")
+        driver.find_element_by_name("session[username_or_email]").send_keys("BuzzGene")
+        time.sleep(2)
+        driver.find_element_by_name("session[password]").send_keys("Kudo9712")
+        driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
+        print(driver.current_url)
+        driver.save_screenshot("screenshot_tweet.png")
+        # a = requests.get(driver.current_url)
+        # soup = BeautifulSoup(a.text,"html.parser")
+        # print(soup.find_all("div"))
 
-    options = Options()
-    options.binary_location = '/app/.apt/usr/bin/google-chrome'
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(chrome_options=options, executable_path="chromedriver")
-    # driver = webdriver.PhantomJS(desired_capabilities=dcap)
-    driver.get("https://twitter.com/")
-    driver.set_window_size(1124, 1124)
-    driver.execute_script("window.scrollTo(0, document.head.scrollHeight);")
-    time.sleep(5)
-    driver.save_screenshot("screenshot_login.png")
-    driver.find_element_by_name("session[username_or_email]").send_keys("BuzzGene")
-    time.sleep(2)
-    driver.find_element_by_name("session[password]").send_keys("Kudo9712")
-    driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
-    print(driver.current_url)
-    driver.save_screenshot("screenshot_tweet.png")
-    # a = requests.get(driver.current_url)
-    # soup = BeautifulSoup(a.text,"html.parser")
-    # print(soup.find_all("div"))
+    if index != 999:
+        time.sleep(5)
+        driver.find_element_by_name("tweet").send_keys(day_tweets[index])
+        time.sleep(10)
+        driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
+        time.sleep(3)
 
-    time.sleep(5)
-    driver.find_element_by_name("tweet").send_keys(day_tweets[index])
-    time.sleep(10)
-    driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
-    time.sleep(3)
+    if index == 999:
+        driver.close()
 
-    driver.close()
+    # driver.close()
 
 
 if __name__ == "__main__":
