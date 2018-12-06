@@ -88,6 +88,12 @@ def tweet(index):
         time.sleep(2)
         driver.find_element_by_name("session[password]").send_keys("Kyou9712")
         driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
+        time.sleep(2)
+        if driver.current_url != "https://twitter.com/":
+            driver.find_element_by_id("challenge_response").send_keys("fadsfagdg@yahoo.co.jp")
+            driver.find_element_by_id("challenge_response").send_keys(Keys.ENTER)
+            time.sleep(3)
+
         print(driver.current_url)
         driver.save_screenshot("screenshot_tweet.png")
         # a = requests.get(driver.current_url)
