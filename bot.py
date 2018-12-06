@@ -76,7 +76,7 @@ def tweet(index):
     options = Options()
     options.add_argument('--headless')
     # driver = webdriver.PhantomJS(desired_capabilities=dcap)
-    driver = webdriver.Chrome(Options=options)
+    driver = webdriver.Chrome()
     # driver.set_window_size(1124, 850)
     driver.get("https://twitter.com/")
     time.sleep(5)
