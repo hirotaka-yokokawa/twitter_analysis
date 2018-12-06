@@ -8,6 +8,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 
+user_name = ""
+passward = ""
+
 day_tweets = []
 
 user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
@@ -74,22 +77,19 @@ def tweet_select():
     print(tweet_num)
     day_tweets = random.sample(results, tweet_num)
 
-    # for num in range(tweet_num):
-
 
 def tweet(index):
     global driver
 
     if index == 0:
-        # driver = webdriver.PhantomJS(desired_capabilities=dcap)
         driver.get("https://twitter.com/")
         driver.set_window_size(1124, 1124)
         driver.execute_script("window.scrollTo(0, document.head.scrollHeight);")
         time.sleep(5)
         driver.save_screenshot("screenshot_login.png")
-        driver.find_element_by_name("session[username_or_email]").send_keys("hibikikkk_9712")
+        driver.find_element_by_name("session[username_or_email]").send_keys(user_name)
         time.sleep(2)
-        driver.find_element_by_name("session[password]").send_keys("Kudo9712")
+        driver.find_element_by_name("session[password]").send_keys(passward)
         driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
         time.sleep(2)
         if driver.current_url != "https://twitter.com/":
@@ -99,9 +99,6 @@ def tweet(index):
 
         print(driver.current_url)
         driver.save_screenshot("screenshot_tweet.png")
-        # a = requests.get(driver.current_url)
-        # soup = BeautifulSoup(a.text,"html.parser")
-        # print(soup.find_all("div"))
 
     if index != 999:
         time.sleep(5)
@@ -113,30 +110,10 @@ def tweet(index):
     if index == 999:
         driver.close()
 
-    # driver.close()
-
 
 if __name__ == "__main__":
-    # init_db()
+    init_db()
     # tweet_select()
-    # print(
-    #     f"python min_retweets:50 until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
-    search(f"python until:{datetime.today().year-2}-{datetime.today().month}-{datetime.today().day-1} lang:ja")
+    # search() 例:f"python until:{datetime.today().year-2}-{datetime.today().month}-{datetime.today().day-1} lang:ja"
     # tweet_select()
     # tweet(0)
-
-    #
-    # while  :
-    #     datetime.datetime.now()
-    #     if now.strftime("%H:%M:%S") == "08:00:00":
-    #         driver.find_element_by_name("tweet").send_keys("おはよう")
-    #         driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
-    #     if now.strftime("%H:%M:%S") == "12:00:00":
-    #         driver.find_element_by_name("tweet").send_keys("こんにちは")
-    #         driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
-    #     if now.strftime("%H:%M:%S") == "20:00:00":
-    #         driver.find_element_by_name("tweet").send_keys("こんばんは")
-    #         driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
-    #     if now.strftime("%H:%M:%S") == "22:00:00":
-    #         driver.find_element_by_name("tweet").send_keys("おやすみ")
-    #         driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()

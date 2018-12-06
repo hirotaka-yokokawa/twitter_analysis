@@ -6,9 +6,9 @@ import threading
 import time
 from datetime import datetime
 
-# from apscheduler.schedulers.blocking import BlockingScheduler
-# import schedule
 import bot
+
+query = ""
 
 
 def main():
@@ -20,7 +20,6 @@ def main():
     while True:
         now_morning = datetime.now().hour
         print(f"{now_morning}時です")
-        # try:
         if 0 <= now_morning <= 15:
             shift_time = random.randint(1, 300)
             print(f"次のツイートまで {tweet_time - shift_time}秒")
@@ -32,14 +31,8 @@ def main():
             bot.day_tweets.clear()
             bot.tweet(999)
             print("今日も終了です")
-            bot.search(
-                f"python until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
+            bot.search(query)
             break
-    # except:
-    #     bot.day_tweets.clear()
-    #     bot.search(
-    #         f"python until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja")
-    #     break
 
 
 def timer():
