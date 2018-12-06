@@ -88,7 +88,7 @@ def tweet(index):
     time.sleep(2)
     driver.find_element_by_name("session[password]").send_keys("Kudo9712")
     driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
-    driver.get("https://mobile.twitter.com/compose/tweet")
+    driver.get("https://twitter.com/compose/tweet")
     print(driver.current_url)
     driver.save_screenshot("screenshot_tweet.png")
     # a = requests.get(driver.current_url)
