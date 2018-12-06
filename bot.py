@@ -96,9 +96,9 @@ def tweet(index):
     # print(soup.find_all("div"))
 
     time.sleep(3)
-    driver.find_element_by_name("""tweet[text]""").send_keys(day_tweets[index])
+    driver.find_element_by_name("tweet").send_keys(day_tweets[index])
     time.sleep(10)
-    driver.find_element_by_name('commit').click()
+    driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
     time.sleep(3)
 
     driver.close()
