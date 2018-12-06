@@ -80,7 +80,7 @@ def tweet(index):
     driver = webdriver.Chrome(chrome_options=options, executable_path="chromedriver")
     # driver = webdriver.PhantomJS(desired_capabilities=dcap)
     driver.get("https://twitter.com/")
-    driver.set_window_size(1124, 850)
+    driver.set_window_size(1124, 1124)
     driver.execute_script("window.scrollTo(0, document.head.scrollHeight);")
     time.sleep(5)
     driver.save_screenshot("screenshot_login.png")
@@ -95,7 +95,7 @@ def tweet(index):
     # soup = BeautifulSoup(a.text,"html.parser")
     # print(soup.find_all("div"))
 
-    time.sleep(3)
+    time.sleep(5)
     driver.find_element_by_name("tweet").send_keys(day_tweets[index])
     time.sleep(10)
     driver.find_element_by_xpath('//span[@class="button-text tweeting-text"]').click()
