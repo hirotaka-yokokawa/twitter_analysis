@@ -86,7 +86,7 @@ def tweet(index):
         driver.save_screenshot("screenshot_login.png")
         driver.find_element_by_name("session[username_or_email]").send_keys("BuzzGene")
         time.sleep(2)
-        driver.find_element_by_name("session[password]").send_keys("Kudo9712")
+        driver.find_element_by_name("session[password]").send_keys("Kyou9712")
         driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
         print(driver.current_url)
         driver.save_screenshot("screenshot_tweet.png")
