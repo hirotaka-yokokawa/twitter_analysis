@@ -10,6 +10,17 @@ from selenium.webdriver.firefox.options import Options
 
 day_tweets = []
 
+user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
+dcap = {
+    "phantomjs.page.settings.userAgent": user_agent,
+    'marionette': True
+}
+options = Options()
+options.binary_location = '/app/.apt/usr/bin/google-chrome'
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+driver = webdriver.Chrome(chrome_options=options, executable_path="chromedriver")
+
 
 def init_db():
     conn = sqlite3.connect("tweets.sqlite")
@@ -67,30 +78,22 @@ def tweet_select():
 
 
 def tweet(index):
-    user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
-    dcap = {
-        "phantomjs.page.settings.userAgent": user_agent,
-        'marionette': True
-    }
+    global driver
+
     if index == 0:
-        options = Options()
-        options.binary_location = '/app/.apt/usr/bin/google-chrome'
-        options.add_argument('--headless')
-        options.add_argument('--disable-gpu')
-        driver = webdriver.Chrome(chrome_options=options, executable_path="chromedriver")
         # driver = webdriver.PhantomJS(desired_capabilities=dcap)
         driver.get("https://twitter.com/")
         driver.set_window_size(1124, 1124)
         driver.execute_script("window.scrollTo(0, document.head.scrollHeight);")
         time.sleep(5)
         driver.save_screenshot("screenshot_login.png")
-        driver.find_element_by_name("session[username_or_email]").send_keys("BuzzGene")
+        driver.find_element_by_name("session[username_or_email]").send_keys("hibikikkk_9712")
         time.sleep(2)
-        driver.find_element_by_name("session[password]").send_keys("Kyou9712")
+        driver.find_element_by_name("session[password]").send_keys("Kudo9712")
         driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
         time.sleep(2)
         if driver.current_url != "https://twitter.com/":
-            driver.find_element_by_id("challenge_response").send_keys("fadsfagdg@yahoo.co.jp")
+            driver.find_element_by_id("challenge_response").send_keys("08062909205")
             driver.find_element_by_id("challenge_response").send_keys(Keys.ENTER)
             time.sleep(3)
 
