@@ -74,9 +74,11 @@ def tweet(index):
     }
 
     options = Options()
+    options.binary_location = '/app/.apt/usr/bin/google-chrome'
     options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    driver = webdriver.Chrome(chrome_options=options, executable_path="chromedriver")
     # driver = webdriver.PhantomJS(desired_capabilities=dcap)
-    driver = webdriver.Chrome()
     # driver.set_window_size(1124, 850)
     driver.get("https://twitter.com/")
     time.sleep(5)
