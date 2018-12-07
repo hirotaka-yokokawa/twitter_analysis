@@ -21,7 +21,7 @@ def main():
         now_morning = datetime.now().hour
         print(f"{now_morning}時です")
         if 21 <= now_morning or now_morning < 13:
-            shift_time = random.randint(1, 300)
+            shift_time = random.randint(-600, 600)
             print(f"次のツイートまで {tweet_time - shift_time}秒")
             time.sleep(tweet_time - shift_time)
             bot.tweet(index)
