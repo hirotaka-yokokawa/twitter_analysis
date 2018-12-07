@@ -20,7 +20,7 @@ def main():
     while True:
         now_morning = datetime.now().hour
         print(f"{now_morning}時です")
-        if 0 <= now_morning <= 15:
+        if 21 <= now_morning or now_morning < 13:
             shift_time = random.randint(1, 300)
             print(f"次のツイートまで {tweet_time - shift_time}秒")
             time.sleep(tweet_time - shift_time)
