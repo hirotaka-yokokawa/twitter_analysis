@@ -8,9 +8,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 
-user_name = "hibikikkk_9712"
-passward = "Kudo9712"
-pass_email = "08062909205"
+user_name = ""
+passward = ""
+pass_email = ""
 
 day_tweets = []
 
@@ -108,9 +108,8 @@ def tweet(index):
 
 
 if __name__ == "__main__":
-    # init_db()
+    init_db()
     # tweet_select()
-    search(
-        f"python exclude:links exclude:replies until:{datetime.today().year}-{datetime.today().month}-{datetime.today().day} lang:ja")  #例:f"python until:{datetime.today().year-2}-{datetime.today().month}-{datetime.today().day-1} lang:ja"
+    # search(f"")  #例:f"python until:{datetime.today().year-2}-{datetime.today().month}-{datetime.today().day-1} lang:ja"
     # tweet_select()
     # tweet(0)

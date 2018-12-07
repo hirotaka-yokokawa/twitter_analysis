@@ -8,7 +8,7 @@ from datetime import datetime
 
 import bot
 
-query = f"python exclude:images exclude:links exclude:replies until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja"
+query = f" exclude:images exclude:links exclude:replies until:{datetime.today().year-1}-{datetime.today().month}-{datetime.today().day} lang:ja"
 
 
 def main():
