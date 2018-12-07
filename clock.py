@@ -23,7 +23,7 @@ def main():
         if 21 <= now_morning or now_morning < 16:
             shift_time = random.randint(-600, 600)
             print(f"次のツイートまで {tweet_time - shift_time}秒")
-            time.sleep(tweet_time - shift_time)
+            time.sleep(10)  # tweet_time - shift_time)
             bot.tweet(index)
             index += 1
 
