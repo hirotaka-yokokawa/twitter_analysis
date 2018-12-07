@@ -39,7 +39,9 @@ def timer():
     now = datetime.now()
     now = now.hour * 3600 + now.minute * 60 + now.second
     print(now)
-    while now <= 54000:
+    while now < 46800 or 75600 <= now:
+        if now >= 86400:
+            now = 0
         time.sleep(1)
         now += 1
 
@@ -51,4 +53,4 @@ if __name__ == "__main__":
         timer()
         threading_main.join()
         print("今日は終了中です")
-        time.sleep(32400)
+        time.sleep(28800)
