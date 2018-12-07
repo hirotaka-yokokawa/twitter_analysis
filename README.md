@@ -12,14 +12,14 @@
  - 実行用プログラムはclock.pyです。
  
 ## デプロイ方法
-herokuをデプロイ先として説明します。先にheroku上にプロジェクトを作成しましょう。
+herokuをデプロイ先として説明します。まず先に、heroku上にプロジェクトを作成しましょう。
 ```
 heroku login
 heroku create プロジェクト名
 heroku git:remote --app プロジェクト名
 ```
-seleniumを使用するため、環境設定をする必要があります。今回はchromeをドライバーとして使います。<br>
-まず、ターミナル上でデプロイ先に移動しておく。以下のコマンドを実行。(chromeの環境を設定)
+seleniumを使用するので、環境設定をする必要があります。今回はchromeをウェブドライバーとして使います。<br>
+ターミナル上でherokuのプロジェクトがある階層に移動しておきましょう。以下のコマンドを実行して、chromeの環境を設定します。
 ```
 heroku buildpacks:set https://github.com/heroku/heroku-buildpack-chromedriver.git
 heroku buildpacks:set https://github.com/heroku/heroku-buildpack-google-chrome.git
