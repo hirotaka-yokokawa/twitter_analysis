@@ -8,16 +8,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 
-user_name = ""
-passward = ""
+user_name = "hibikikkk_9712"
+passward = "Kudo9712"
+pass_email = "08062909205"
 
 day_tweets = []
 
-user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/53 (KHTML, like Gecko) Chrome/15.0.87"
-dcap = {
-    "phantomjs.page.settings.userAgent": user_agent,
-    'marionette': True
-}
 options = Options()
 options.binary_location = '/app/.apt/usr/bin/google-chrome'
 options.add_argument('--headless')
@@ -93,7 +89,7 @@ def tweet(index):
         driver.find_element_by_name("session[password]").send_keys(Keys.ENTER)
         time.sleep(2)
         if driver.current_url != "https://twitter.com/":
-            driver.find_element_by_id("challenge_response").send_keys("08062909205")
+            driver.find_element_by_id("challenge_response").send_keys(pass_email)
             driver.find_element_by_id("challenge_response").send_keys(Keys.ENTER)
             time.sleep(3)
 
@@ -112,8 +108,9 @@ def tweet(index):
 
 
 if __name__ == "__main__":
-    init_db()
+    # init_db()
     # tweet_select()
-    # search() 例:f"python until:{datetime.today().year-2}-{datetime.today().month}-{datetime.today().day-1} lang:ja"
+    search(
+        f"python exclude:links exclude:replies until:{datetime.today().year}-{datetime.today().month}-{datetime.today().day} lang:ja")  #例:f"python until:{datetime.today().year-2}-{datetime.today().month}-{datetime.today().day-1} lang:ja"
     # tweet_select()
     # tweet(0)
